@@ -1,6 +1,9 @@
 package samples
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/davecgh/go-spew/spew"
+)
 
 func Run4() {
 	pointer := NewZeroValuesSimpleStructure()
@@ -9,6 +12,15 @@ func Run4() {
 
 	// passing a value explicitly
 	fmt.Println(*pointer)
+
+	// this is the same as using new keyword
+	var declaredStructure SimpleStructure
+	spew.Dump(declaredStructure)
+	//(samples.SimpleStructure) {
+	//Name: (string) "",
+	//		Surname: (string) ""
+	//}
+
 }
 
 type SimpleStructure struct {
